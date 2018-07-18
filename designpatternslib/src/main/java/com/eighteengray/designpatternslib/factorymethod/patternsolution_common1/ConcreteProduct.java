@@ -1,7 +1,7 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution_common1;
 /**
- * �����Product����
+ * 具体的Product对象
  */
 public class ConcreteProduct implements Product {
-	//ʵ��ProductҪ��ķ���
+	//实现Product要求的方法
 }

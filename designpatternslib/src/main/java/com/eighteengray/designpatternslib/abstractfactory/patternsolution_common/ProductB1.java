@@ -1,9 +1,9 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution_common;
 
 /**
- * ��ƷB�ľ���ʵ��
+ * 产品B的具体实现
  */
 public class ProductB1 implements AbstractProductB {
-	//ʵ�ֲ�ƷB�Ľӿ��ж���Ĳ���
+	//实现产品B的接口中定义的操作
 }
 

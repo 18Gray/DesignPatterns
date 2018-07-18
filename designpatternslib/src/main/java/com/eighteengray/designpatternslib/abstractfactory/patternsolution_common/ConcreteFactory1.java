@@ -1,6 +1,6 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution_common;
 /**
- * ����Ĺ���ʵ�ֶ���ʵ�ִ�������Ĳ�Ʒ����Ĳ���
+ * 具体的工厂实现对象，实现创建具体的产品对象的操作
  */
 public class ConcreteFactory1 implements AbstractFactory {
 

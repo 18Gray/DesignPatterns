@@ -2,9 +2,9 @@ package com.eighteengray.designpatternslib.abstractfactory.commonsolution;
 
 public class Client {
 	public static void main(String[] args) {
-		//����װ������ʦ����
+		//创建装机工程师对象
 		ComputerEngineer engineer = new ComputerEngineer();
-		//����װ������ʦ�Լ�ѡ����������װ������ʦ��װ����
+		//告诉装机工程师自己选择的配件，让装机工程师组装电脑
 		engineer.makeComputer(1,2);
 	}
 }

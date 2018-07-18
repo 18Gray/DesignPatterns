@@ -1,15 +1,15 @@
 package com.eighteengray.designpatternslib.abstractfactory.commonsolution;
 /**
- * ΢�ǵ�����
+ * 微星的主板
  */
 public class MSIMainboard implements MainboardApi{
 	/**
-	 * CPU��۵Ŀ���
+	 * CPU插槽的孔数
 	 */
 	private int cpuHoles = 0;
 	/**
-	 * ���췽��������CPU��۵Ŀ���
-	 * @param cpuHoles CPU��۵Ŀ���
+	 * 构造方法，传入CPU插槽的孔数
+	 * @param cpuHoles CPU插槽的孔数
 	 */
 	public MSIMainboard(int cpuHoles){
 		this.cpuHoles = cpuHoles;

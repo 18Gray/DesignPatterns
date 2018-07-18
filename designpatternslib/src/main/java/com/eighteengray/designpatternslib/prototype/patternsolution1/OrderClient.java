@@ -2,16 +2,16 @@ package com.eighteengray.designpatternslib.prototype.patternsolution1;
 
 public class OrderClient {
 	public static void main(String[] args) {
-		//����������������Ϊ����ʾ�򵥣�ֱ��new��
+		//创建订单对象，这里为了演示简单，直接new了
 		PersonalOrder op = new PersonalOrder();
-		//���ö�������
+		//设置订单数据
 		op.setOrderProductNum(1925);
-		op.setCustomerName("����");
+		op.setCustomerName("张三");
 		op.setProductId("P0001");
 		
-		//�����ȡҵ������࣬Ҳֱ��new�ˣ�Ϊ�˼򵥣���ҵ��ӿڶ�û����
+		//这里获取业务处理的类，也直接new了，为了简单，连业务接口都没有做
 		OrderBusiness ob = new OrderBusiness();
-		//����ҵ�������涩������
+		//调用业务来保存订单对象
 		ob.saveOrder(op);
 	}
 }

@@ -1,22 +1,22 @@
 package com.eighteengray.designpatternslib.mediator.patternsolution1;
 /**
- * �����࣬ʵ���н��߽ӿ�
+ * 主板类，实现中介者接口
  */
 public class MotherBoard implements Mediator{
 	/**
-	 * ��Ҫ֪��Ҫ������ͬ���ࡪ��������
+	 * 需要知道要交互的同事类——光驱类
 	 */
 	private CDDriver cdDriver = null;
 	/**
-	 * ��Ҫ֪��Ҫ������ͬ���ࡪ��CPU��
+	 * 需要知道要交互的同事类——CPU类
 	 */
 	private CPU cpu = null;
 	/**
-	 * ��Ҫ֪��Ҫ������ͬ���ࡪ���Կ���
+	 * 需要知道要交互的同事类——显卡类
 	 */
 	private VideoCard videoCard = null;
 	/**
-	 * ��Ҫ֪��Ҫ������ͬ���ࡪ��������
+	 * 需要知道要交互的同事类——声卡类
 	 */
 	private SoundCard soundCard = null;
 
@@ -35,32 +35,32 @@ public class MotherBoard implements Mediator{
 	
 	public void changed(Colleague colleague) {
 		if(colleague == cdDriver){
-			//��ʾ������ȡ������
+			//表示光驱读取数据了
 			this.opeCDDriverReadData((CDDriver)colleague);
 		}else if(colleague == cpu){
-			//��ʾCPU��������
+			//表示CPU处理完了
 			this.opeCPU((CPU)colleague);
 		}
 	}
 	/**
-	 * ���������ȡ���ݹ�������������Ľ���
-	 * @param cd ����ͬ�¶���
+	 * 处理光驱读取数据过后与其他对象的交互
+	 * @param cd 光驱同事对象
 	 */
 	private void opeCDDriverReadData(CDDriver cd){
-		//1���Ȼ�ȡ������ȡ������
+		//1：先获取光驱读取的数据
 		String data = cd.getData();
-		//2������Щ���ݴ��ݸ�CPU���д���
+		//2：把这些数据传递给CPU进行处理
 		this.cpu.executeData(data);
 	}
 	/**
-	 * ����CPU���������ݺ�����������Ľ���
-	 * @param cpu CPUͬ����
+	 * 处理CPU处理完数据后与其他对象的交互
+	 * @param cpu CPU同事类
 	 */
 	private void opeCPU(CPU cpu){
-		//1���Ȼ�ȡCPU������������
+		//1：先获取CPU处理过后的数据
 		String videoData = cpu.getVideoData();
 		String soundData = cpu.getSoundData();
-		//2������Щ���ݴ��ݸ��Կ�������չʾ����
+		//2：把这些数据传递给显卡和声卡展示出来
 		this.videoCard.showData(videoData);
 		this.soundCard.soundData(soundData);
 	}

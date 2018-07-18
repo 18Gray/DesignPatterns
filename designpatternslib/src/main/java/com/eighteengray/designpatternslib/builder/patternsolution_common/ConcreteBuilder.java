@@ -1,20 +1,20 @@
 package com.eighteengray.designpatternslib.builder.patternsolution_common;
 /**
- * ����Ĺ�����ʵ�ֶ���
+ * 具体的构建器实现对象
  */
 public class ConcreteBuilder implements Builder {
 	/**
-	 * ���������չ����Ĳ�Ʒ����
+	 * 构建器最终构建的产品对象
 	 */
 	private Product resultProduct;
 	/**
-	 * ��ȡ���������չ����Ĳ�Ʒ����
-	 * @return ���������չ����Ĳ�Ʒ����
+	 * 获取构建器最终构建的产品对象
+	 * @return 构建器最终构建的产品对象
 	 */
 	public Product getResult() {
 		return resultProduct;
 	}
 	public void buildPart() {
-		//����ĳ�������Ĺ��ܴ���
+		//构建某个部件的功能处理
 	}
 }

@@ -2,13 +2,13 @@ package com.eighteengray.designpatternslib.factorymethod.patternsolution_ioc;
 
 public abstract class A1 {
 	/**
-	 * ��������������C1�������ڴ�����ע�������;��
-	 * @return C1�Ķ���ʵ��
+	 * 工厂方法，创建C1，类似于从子类注入进来的途径
+	 * @return C1的对象实例
 	 */
 	protected abstract C1 createC1();
 	public void t1(){
-		//������Ҫʹ��C1�����ǲ�֪������������һ����Ҳ�Ͳ�����ȥ����C1�ˣ���ô�죿
-		//����������������ʵ�֣�������ʡ�ģ����ﲻ�ù���ô��ȡC1��ֱ��ʹ�þͺ���
+		//这里需要使用C1，可是不知道究竟是用哪一个，也就不主动去创建C1了，怎么办？
+		//反正会在子类里面实现，这样更省心，这里不用管怎么获取C1，直接使用就好了
 		createC1().tc();
 	}
 }

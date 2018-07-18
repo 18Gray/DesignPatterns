@@ -4,20 +4,20 @@ import java.io.*;
 import java.util.*;
 
 /**
- * ʵ�ֶ���־�ļ��Ĳ���
+ * 实现对日志文件的操作
  */
 public class LogFileOperate implements LogFileOperateApi{
 	/**
-	 * ��־�ļ���·�����ļ����ƣ�Ĭ���ǵ�ǰclasspath�µ�AdapterLog.log
+	 * 日志文件的路径和文件名称，默认是当前classpath下的AdapterLog.log
 	 */
 	private String logFilePathName = "AdapterLog.log";	
 	/**
-	 * ���췽���������ļ���·��������
-	 * @param logFilePathName �ļ���·��������
+	 * 构造方法，传入文件的路径和名称
+	 * @param logFilePathName 文件的路径和名称
 	 */
 	public LogFileOperate(String logFilePathName) {
-		//���ж��Ƿ������ļ���·�������ƣ�����ǣ�
-		//���������ò�������־�ļ���·��������
+		//先判断是否传入了文件的路径和名称，如果是，
+		//就重新设置操作的日志文件的路径和名称
 		if(logFilePathName!=null && logFilePathName.trim().length()>0){
 			this.logFilePathName = logFilePathName;
 		}

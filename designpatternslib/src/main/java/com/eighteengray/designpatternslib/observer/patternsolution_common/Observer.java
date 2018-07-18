@@ -1,12 +1,12 @@
 package com.eighteengray.designpatternslib.observer.patternsolution_common;
 
 /**
- * �۲��߽ӿڣ�����һ�����µĽӿڸ���Щ��Ŀ�귢���ı��ʱ��֪ͨ�Ķ���
+ * 观察者接口，定义一个更新的接口给那些在目标发生改变的时候被通知的对象
  */
 public interface Observer {
 	/**
-	 * ���µĽӿ�
-	 * @param subject ����Ŀ����󣬺û�ȡ��Ӧ��Ŀ������״̬
+	 * 更新的接口
+	 * @param subject 传入目标对象，好获取相应的目标对象的状态
 	 */
 	public void update(Subject subject);
 

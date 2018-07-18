@@ -1,10 +1,10 @@
 package com.eighteengray.designpatternslib.abstractfactory.commonsolution;
 /**
- * CPU�Ľӿ�
+ * CPU的接口
  */
 public interface CPUApi {
 	/**
-	 * ʾ�ⷽ����CPU��������Ĺ���
+	 * 示意方法，CPU具有运算的功能
 	 */
 	public void calculate();
 }

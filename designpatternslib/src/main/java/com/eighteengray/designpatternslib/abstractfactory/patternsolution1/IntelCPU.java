@@ -1,15 +1,15 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution1;
 /**
- *Intel��CPUʵ��
+ *Intel的CPU实现
  */
 public class IntelCPU implements CPUApi{
 	/**
-	 * CPU�������Ŀ
+	 * CPU的针脚数目
 	 */
 	private int pins = 0;
 	/**
-	 * ���췽��������CPU�������Ŀ
-	 * @param pins CPU�������Ŀ
+	 * 构造方法，传入CPU的针脚数目
+	 * @param pins CPU的针脚数目
 	 */
 	public IntelCPU(int pins){
 		this.pins = pins;

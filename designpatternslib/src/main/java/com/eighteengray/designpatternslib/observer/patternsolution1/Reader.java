@@ -1,16 +1,16 @@
 package com.eighteengray.designpatternslib.observer.patternsolution1;
 /**
- * �����Ķ��ߣ�Ϊ�˼򵥾�����һ������
+ * 真正的读者，为了简单就描述一下姓名
  */
 public class Reader implements Observer{
 	/**
-	 * ���ߵ�����
+	 * 读者的姓名
 	 */
 	private String name;
 
 	public void update(Subject subject) {
-		//���ǲ������ķ�ʽ
-		System.out.println(name+"�յ���ֽ�ˣ��Ķ��ȡ�������==="+((NewsPaper)subject).getContent());
+		//这是采用拉的方式
+		System.out.println(name+"收到报纸了，阅读先。内容是==="+((NewsPaper)subject).getContent());
 	}
 	public String getName() {
 		return name;

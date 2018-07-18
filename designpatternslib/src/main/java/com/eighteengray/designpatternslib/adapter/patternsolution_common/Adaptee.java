@@ -1,15 +1,13 @@
 package com.eighteengray.designpatternslib.adapter.patternsolution_common;
-
 /**
- * �Ѿ����ڵĽӿڣ�����ӿ���Ҫ������
+ * 已经存在的接口，这个接口需要被适配
  */
-public class Adaptee
-{
+public class Adaptee {
 	/**
-	 * ʾ�ⷽ����ԭ���Ѿ����ڣ��Ѿ�ʵ�ֵķ���
+	 * 示意方法，原本已经存在，已经实现的方法
 	 */
-	public void specificRequest()
-	{
-		// ����Ĺ��ܴ���
+	public void specificRequest() {
+		//具体的功能处理
 	}
 }
+

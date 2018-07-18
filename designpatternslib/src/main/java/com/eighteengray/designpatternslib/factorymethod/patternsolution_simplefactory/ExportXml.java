@@ -1,11 +1,11 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution_simplefactory;
 /**
- * ������xml�ļ��Ķ���
+ * 导出成xml文件的对象
  */
 public class ExportXml implements ExportFileApi{
 	public boolean export(String data) {
-		//��ʾ��һ��
-		System.out.println("��������"+data+"��XML�ļ�");
+		//简单示意一下
+		System.out.println("导出数据"+data+"到XML文件");
 		return true;
 	}
 }

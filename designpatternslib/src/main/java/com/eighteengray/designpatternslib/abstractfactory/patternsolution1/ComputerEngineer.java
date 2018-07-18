@@ -1,44 +1,44 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution1;
 
 /**
- * װ������ʦ����
+ * 装机工程师的类
  */
 public  class ComputerEngineer {
 	/**
-	 * ������װ������Ҫ��CPU
+	 * 定义组装机器需要的CPU
 	 */
 	private CPUApi cpu= null;
 	/**
-	 * ������װ������Ҫ������
+	 * 定义组装机器需要的主板
 	 */
 	private MainboardApi mainboard = null;
 
 	/**
-	 * װ������
-	 * @param schema �ͻ�ѡ���װ������
+	 * 装机过程
+	 * @param schema 客户选择的装机方案
 	 */
 	public void makeComputer(AbstractFactory schema){
-		//1������׼����װ������Ҫ�����
+		//1：首先准备好装机所需要的配件
 		prepareHardwares(schema);
-		//2����װ����
+		//2：组装机器
 		
-		//3�����Ի���
+		//3：测试机器
 		
-		//4�������ͻ�
+		//4：交付客户
 	}
 	/**
-	 * ׼��װ������Ҫ�����
-	 * @param schema �ͻ�ѡ���װ������
+	 * 准备装机所需要的配件
+	 * @param schema 客户选择的装机方案
 	 */
 	private void prepareHardwares(AbstractFactory schema){
-		//����Ҫȥ׼��CPU������ľ���ʵ�֣�Ϊ��ʾ���򵥣�����ֻ׼��������
-		//���ǣ�װ������ʦ����֪�����ȥ��������ô���أ�
+		//这里要去准备CPU和主板的具体实现，为了示例简单，这里只准备这两个
+		//可是，装机工程师并不知道如何去创建，怎么办呢？
 		
-		//ʹ�ó��󹤳�����ȡ��Ӧ�Ľӿڶ���
+		//使用抽象工厂来获取相应的接口对象
 		this.cpu = schema.createCPUApi();
 		this.mainboard = schema.createMainboardApi();
 		
-		//����һ������Ƿ����
+		//测试一下配件是否好用
 		this.cpu.calculate();
 		this.mainboard.installCPU();
 	}

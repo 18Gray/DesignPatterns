@@ -1,14 +1,14 @@
 package com.eighteengray.designpatternslib.builder.commonsolution;
 /**
- * ����������ļ�ͷ�����ݵĶ���
+ * 描述输出到文件头的内容的对象
  */
 public class ExportHeaderModel {
 	/**
-	 * �ֹ�˾�����е���
+	 * 分公司或门市点编号
 	 */
 	private String depId;
 	/**
-	 * �������ݵ�����
+	 * 导出数据的日期
 	 */
 	private String exportDate;
 	public String getDepId() {

@@ -1,6 +1,6 @@
 package com.eighteengray.designpatternslib.mediator.patternsolution1;
 /**
- * �����࣬һ��ͬ����
+ * 声卡类，一个同事类
  */
 public class SoundCard extends Colleague{
 	public SoundCard(Mediator mediator) {
@@ -8,11 +8,11 @@ public class SoundCard extends Colleague{
 	}
 	
 	/**
-	 * ������Ƶ���ݷ�������
-	 * @param data ��������������
+	 * 按照声频数据发出声音
+	 * @param data 发出声音的数据
 	 */
 	public void soundData(String data){
-		System.out.println("��������"+data);
+		System.out.println("画外音："+data);
 	}
 	
 }

@@ -1,14 +1,14 @@
 package com.eighteengray.designpatternslib.prototype.patternsolution_deepclone;
 /**
- * ��Ʒ����
+ * 产品对象
  */
 public class Product implements Cloneable{
 	/**
-	 * ��Ʒ���
+	 * 产品编号
 	 */
 	private String productId;	
 	/**
-	 * ��Ʒ����
+	 * 产品名称
 	 */
 	private String name;
 	
@@ -26,7 +26,7 @@ public class Product implements Cloneable{
 		this.productId = productId;
 	}
 	public String toString(){
-		return "��Ʒ���="+this.productId+"����Ʒ����="+this.name;
+		return "产品编号="+this.productId+"，产品名称="+this.name;
 	}
 	public Object clone() {
 		Object obj = null;

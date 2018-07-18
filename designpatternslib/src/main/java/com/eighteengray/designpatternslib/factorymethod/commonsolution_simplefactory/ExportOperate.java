@@ -1,26 +1,26 @@
 package com.eighteengray.designpatternslib.factorymethod.commonsolution_simplefactory;
 /**
- * ʵ�ֵ������ݵ�ҵ���ܶ���
+ * 实现导出数据的业务功能对象
  */
 public class ExportOperate {
 	/**
-	 * �����ļ�
-	 * @param type �û�ѡ��ĵ�������
-	 * @param data ��Ҫ���������
-	 * @return �Ƿ�ɹ������ļ�
+	 * 导出文件
+	 * @param type 用户选择的导出类型
+	 * @param data 需要保存的数据
+	 * @return 是否成功导出文件
 	 */
 	public boolean export(int type,String data){
-		//����ɸ��ֵ�������ǰ��׼������
-		//�����������У��
-		System.out.println("now ��������У��");
-		//�����������ת��
-		System.out.println("now ��������ת��");
-		//����������ݸ�ʽ�ķ�װ
-		System.out.println("now �������ݸ�ʽ�ķ�װ");
+		//先完成各种导出数据前的准备工作
+		//比如进行数据校验
+		System.out.println("now 进行数据校验");
+		//比如进行数据转换
+		System.out.println("now 进行数据转换");
+		//比如进行数据格式的封装
+		System.out.println("now 进行数据格式的封装");
 		
-		//Ȼ���������ȥ����
+		//然后才真正的去导出
 		ExportFileApi api = null;
-		//����������ѡ�񾿾�Ҫ������һ�ֵ����ļ�����
+		//根据类型来选择究竟要创建哪一种导出文件对象
 		if(type == 1){
 			api = new ExportTxtFile();
 		}else if(type == 2){

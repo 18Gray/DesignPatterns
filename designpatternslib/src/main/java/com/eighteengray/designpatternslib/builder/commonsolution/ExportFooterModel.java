@@ -1,10 +1,10 @@
 package com.eighteengray.designpatternslib.builder.commonsolution;
 /**
- * ����������ļ�β�����ݵĶ���
+ * 描述输出到文件尾的内容的对象
  */
 public class ExportFooterModel {
 	/**
-	 * �����
+	 * 输出人
 	 */
 	private String exportUser;
 

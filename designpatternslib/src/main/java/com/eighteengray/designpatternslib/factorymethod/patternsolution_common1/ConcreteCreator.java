@@ -1,10 +1,10 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution_common1;
 /**
- * ����Ĵ�����ʵ�ֶ���
+ * 具体的创建器实现对象
  */
 public class ConcreteCreator extends Creator {
 	public Product factoryMethod() {
-		//�ض��幤������������һ�������Product����
+		//重定义工厂方法，返回一个具体的Product对象
 		return new ConcreteProduct();
 	}
 }

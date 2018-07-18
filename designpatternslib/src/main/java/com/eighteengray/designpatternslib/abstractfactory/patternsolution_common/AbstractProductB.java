@@ -1,8 +1,8 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution_common;
 /**
- * �����ƷB�Ľӿ�
+ * 抽象产品B的接口
  */
 public interface AbstractProductB {
-	//��������ƷB��صĲ���
+	//定义抽象产品B相关的操作
 }
 

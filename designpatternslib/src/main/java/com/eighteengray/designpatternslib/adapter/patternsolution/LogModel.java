@@ -3,23 +3,23 @@ package com.eighteengray.designpatternslib.adapter.patternsolution;
 import java.io.*;
 
 /**
- * ��־���ݶ���
+ * 日志数据对象
  */
 public class LogModel implements Serializable{
 	/**
-	 * ��־���
+	 * 日志编号
 	 */
 	private String logId;
 	/**
-	 * ������Ա
+	 * 操作人员
 	 */
 	private String operateUser;
 	/**
-	 * ����ʱ�䣬��yyyy-MM-dd HH:mm:ss�ĸ�ʽ��¼
+	 * 操作时间，以yyyy-MM-dd HH:mm:ss的格式记录
 	 */
 	private String operateTime;	
 	/**
-	 * ��־����
+	 * 日志内容
 	 */
 	private String logContent;
 	

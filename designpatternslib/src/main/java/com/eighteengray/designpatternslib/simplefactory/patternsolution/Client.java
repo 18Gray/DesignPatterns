@@ -1,15 +1,13 @@
 package com.eighteengray.designpatternslib.simplefactory.patternsolution;
-
 /**
- * �ͻ��ˣ�ʹ��Api�ӿ�
+ * 客户端，使用Api接口
  */
-public class Client
-{
-	public static void main(String[] args)
-	{
-		// ͨ���򵥹�������ȡ�ӿڶ���
+public class Client {
+	public static void main(String[] args) {
+		//通过简单工厂来获取接口对象
 		Api api = Factory.createApi(1);
-
-		api.operation("����ʹ�ü򵥹���");
+		
+		
+		api.operation("正在使用简单工厂");
 	}
 }

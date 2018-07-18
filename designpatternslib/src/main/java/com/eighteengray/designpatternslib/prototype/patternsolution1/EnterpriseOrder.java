@@ -1,18 +1,18 @@
 package com.eighteengray.designpatternslib.prototype.patternsolution1;
 /**
- * ��ҵ��������
+ * 企业订单对象
  */
 public class EnterpriseOrder implements OrderApi{
 	/**
-	 * ��ҵ����
+	 * 企业名称
 	 */
 	private String enterpriseName;
 	/**
-	 * ��Ʒ���
+	 * 产品编号
 	 */
 	private String productId;	
 	/**
-	 * ������Ʒ����
+	 * 订单产品数量
 	 */
 	private int orderProductNum = 0;
 	public int getOrderProductNum() {
@@ -34,10 +34,10 @@ public class EnterpriseOrder implements OrderApi{
 		this.productId = productId;
 	}
 	public String toString(){
-		return "����ҵ�����Ķ�����ҵ��="+this.enterpriseName+"��������Ʒ��="+this.productId+"����������Ϊ="+this.orderProductNum;
+		return "本企业订单的订购企业是="+this.enterpriseName+"，订购产品是="+this.productId+"，订购数量为="+this.orderProductNum;
 	}
 	public OrderApi cloneOrder() {
-		//����һ���µĶ�����Ȼ��ѱ�ʵ�������ݸ��ƹ�ȥ
+		//创建一个新的订单，然后把本实例的数据复制过去
 		EnterpriseOrder order = new EnterpriseOrder();
 		order.setEnterpriseName(this.enterpriseName);
 		order.setProductId(this.productId);

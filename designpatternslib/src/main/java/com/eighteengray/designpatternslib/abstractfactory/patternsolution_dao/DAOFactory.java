@@ -1,16 +1,16 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution_dao;
 /**
- * ���󹤳����������������Ӽ�¼��Ӧ��DAO����
+ * 抽象工厂，创建订单主、子记录对应的DAO对象
  */
 public abstract class DAOFactory {
 	/**
-	 * ������������¼��Ӧ��DAO����
-	 * @return ��������¼��Ӧ��DAO����
+	 * 创建订单主记录对应的DAO对象
+	 * @return 订单主记录对应的DAO对象
 	 */
 	public abstract OrderMainDAO createOrderMainDAO();
 	/**
-	 * ���������Ӽ�¼��Ӧ��DAO����
-	 * @return �����Ӽ�¼��Ӧ��DAO����
+	 * 创建订单子记录对应的DAO对象
+	 * @return 订单子记录对应的DAO对象
 	 */
 	public abstract OrderDetailDAO createOrderDetailDAO();
 }

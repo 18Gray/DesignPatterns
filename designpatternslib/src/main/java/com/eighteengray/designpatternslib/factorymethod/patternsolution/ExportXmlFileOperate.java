@@ -1,6 +1,6 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution;
 /**
- * �������ı��ļ���ʽ�Ķ���
+ * 导出成文本文件格式的对象
  */
 public class ExportXmlFileOperate extends ExportOperate{
 

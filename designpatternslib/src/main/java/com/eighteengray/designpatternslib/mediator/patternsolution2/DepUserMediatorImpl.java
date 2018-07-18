@@ -2,13 +2,13 @@ package com.eighteengray.designpatternslib.mediator.patternsolution2;
 
 import java.util.*;
 /**
- * ʵ�ֲ��ź���Ա�������н���ʵ����
- * ˵����Ϊ����ʾ�ļ���ԣ�ֻʾ��ʵ�ֳ������ź���Ա��ְ�Ĺ���
+ * 实现部门和人员交互的中介者实现类
+ * 说明：为了演示的简洁性，只示例实现撤销部门和人员离职的功能
  */
 public class DepUserMediatorImpl{
 	private static DepUserMediatorImpl mediator = new DepUserMediatorImpl();
 	private DepUserMediatorImpl(){
-		//���ó�ʼ���������ݵĹ���
+		//调用初始化测试数据的功能
 		initTestData();
 	}
 	public static DepUserMediatorImpl getInstance(){
@@ -16,14 +16,14 @@ public class DepUserMediatorImpl{
 	}
 	
 	/**
-	 * �����ã���¼���ź���Ա�Ĺ�ϵ
+	 * 测试用，记录部门和人员的关系
 	 */
 	private Collection<DepUserModel> depUserCol = new ArrayList<DepUserModel>();
 	/**
-	 * ��ʼ����������
+	 * 初始化测试数据
 	 */
 	private void initTestData(){
-		//׼��һЩ��������
+		//准备一些测试数据
 		DepUserModel du1 = new DepUserModel();
 		du1.setDepUserId("du1");
 		du1.setDepId("d1");
@@ -55,90 +55,90 @@ public class DepUserMediatorImpl{
 		depUserCol.add(du5);
 	}
 	/**
-	 * ����������ŵĲ��������������Ա�Ľ�������Ҫȥ����Ӧ�Ĺ�ϵ
-	 * @param depId �������Ĳ��Ŷ���ı��
-	 * @return �Ƿ��Ѿ���ȷ�Ĵ������������������������Ա�Ľ���
+	 * 完成因撤销部门的操作所引起的与人员的交互，需要去除相应的关系
+	 * @param depId 被撤销的部门对象的编号
+	 * @return 是否已经正确的处理了因撤销部门所引起的与人员的交互
 	 */
 	public boolean deleteDep(String depId) {
-		//��ע�⣺Ϊ����ʾ�򵥣����ų�����ԭ���ŵ���Ա��ô����Ⱥ���ҵ��������Ͳ�����
+		//请注意：为了演示简单，部门撤销后，原部门的人员怎么处理等后续业务处理，这里就不管了
 		
-		//1������¼���ź���Ա��ϵ�ļ������棬Ѱ�Ҹ����������ص���Ա
-		//����һ����ʱ�ļ��ϣ���¼��Ҫ����Ĺ�ϵ����
+		//1：到记录部门和人员关系的集合里面，寻找跟这个部门相关的人员
+		//设置一个临时的集合，记录需要清除的关系对象
 		Collection<DepUserModel> tempCol = new ArrayList<DepUserModel>();
 		for(DepUserModel du : depUserCol){
 			if(du.getDepId().equals(depId)){
-				//2����Ҫ�������صļ�¼ȥ�����ȼ�¼����
+				//2：需要把这个相关的记录去掉，先记录下来
 				tempCol.add(du);
 			}
 		}
-		//3���ӹ�ϵ���������������Щ��ϵ
+		//3：从关系集合里面清除掉这些关系
 		depUserCol.removeAll(tempCol);
 		
 		return true;
 	}
 	/**
-	 * �������Ա��ְ������벿�ŵĽ���
-	 * @param userId ��ְ����Ա�ı��
-	 * @return �Ƿ���ȷ����������Ա��ְ������벿�ŵĽ���
+	 * 完成因人员离职引起的与部门的交互
+	 * @param userId 离职的人员的编号
+	 * @return 是否正确处理了因人员离职引起的与部门的交互
 	 */
 	public boolean deleteUser(String userId) {
-		//1������¼���ź���Ա��ϵ�ļ������棬Ѱ�Ҹ������Ա��صĲ���
-		//����һ����ʱ�ļ��ϣ���¼��Ҫ����Ĺ�ϵ����
+		//1：到记录部门和人员关系的集合里面，寻找跟这个人员相关的部门
+		//设置一个临时的集合，记录需要清除的关系对象
 		Collection<DepUserModel> tempCol = new ArrayList<DepUserModel>();
 		for(DepUserModel du : depUserCol){
 			if(du.getUserId().equals(userId)){
-				//2����Ҫ�������صļ�¼ȥ�����ȼ�¼����
+				//2：需要把这个相关的记录去掉，先记录下来
 				tempCol.add(du);
 			}
 		}
-		//3���ӹ�ϵ���������������Щ��ϵ
+		//3：从关系集合里面清除掉这些关系
 		depUserCol.removeAll(tempCol);
 	
 		return true;
 	}
 	/**
-	 * �����ã����ڲ���ӡ��ʾһ��һ�������µ�������Ա
-	 * @param dep ���Ŷ���
+	 * 测试用，在内部打印显示一下一个部门下的所有人员
+	 * @param dep 部门对象
 	 */
 	public void showDepUsers(Dep dep) {
 		for(DepUserModel du : depUserCol){
 			if(du.getDepId().equals(dep.getDepId())){
-				System.out.println("���ű��="+dep.getDepId()+"����ӵ����Ա�������ǣ�"+du.getUserId());
+				System.out.println("部门编号="+dep.getDepId()+"下面拥有人员，其编号是："+du.getUserId());
 			}
 		}
 	}
 	/**
-	 * �����ã����ڲ���ӡ��ʾһ��һ����Ա�����Ĳ���
-	 * @param user ��Ա����
+	 * 测试用，在内部打印显示一下一个人员所属的部门
+	 * @param user 人员对象
 	 */
 	public void showUserDeps(User user) {
 		for(DepUserModel du : depUserCol){
 			if(du.getUserId().equals(user.getUserId())){
-				System.out.println("��Ա���="+user.getUserId()+"���ڲ��ű���ǣ�"+du.getDepId());
+				System.out.println("人员编号="+user.getUserId()+"属于部门编号是："+du.getDepId());
 			}
 		}
 	}
 	/**
-	 * �������Ա��������������벿�ŵĽ���
-	 * @param userId ����������Ա�ı��
-	 * @param oldDepId ����ǰ�Ĳ��ŵı��
-	 * @param newDepId ������Ĳ��ŵı��
-	 * @return �Ƿ���ȷ����������Ա��������������벿�ŵĽ���
+	 * 完成因人员调换部门引起的与部门的交互
+	 * @param userId 被调换的人员的编号
+	 * @param oldDepId 调换前的部门的编号
+	 * @param newDepId 调换后的部门的编号
+	 * @return 是否正确处理了因人员调换部门引起的与部门的交互
 	 */
 	public boolean changeDep(String userId,String oldDepId, String newDepId) {
-		//��ʾ����ȥʵ����
+		//本示例不去实现了
 		return false;
 	}
 	
 
 	/**
-	 * ������źϲ����������������Ա�Ľ���
-	 * @param colDepIds ��Ҫ�ϲ��Ĳ��ŵı�ż���
-	 * @param newDep �ϲ����µĲ��Ŷ���
-	 * @return �Ƿ���ȷ���������źϲ����������������Ա�Ľ���
+	 * 完成因部门合并操作所引起的与人员的交互
+	 * @param colDepIds 需要合并的部门的编号集合
+	 * @param newDep 合并后新的部门对象
+	 * @return 是否正确处理了因部门合并操作所引起的与人员的交互
 	 */
 	public boolean joinDep(Collection<String> colDepIds, Dep newDep) {
-		//��ʾ����ȥʵ����		
+		//本示例不去实现了		
 		return false;
 	}
 }

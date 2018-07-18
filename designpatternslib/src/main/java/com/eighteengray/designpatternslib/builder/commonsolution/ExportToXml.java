@@ -3,31 +3,31 @@ package com.eighteengray.designpatternslib.builder.commonsolution;
 import java.util.Collection;
 import java.util.Map;
 /**
- * �������ݵ�XML�ļ��Ķ���
+ * 导出数据到XML文件的对象
  */
 public class ExportToXml {
 	/**
-	 * �������ݵ�XML�ļ�
-	 * @param ehm �ļ�ͷ������
-	 * @param mapData ���ݵ�����
-	 * @param efm �ļ�β������
+	 * 导出数据到XML文件
+	 * @param ehm 文件头的内容
+	 * @param mapData 数据的内容
+	 * @param efm 文件尾的内容
 	 */
 	public void export(ExportHeaderModel ehm,Map<String,Collection<ExportDataModel>> mapData,ExportFooterModel efm){
-		//������¼����������ļ�����
+		//用来记录最终输出的文件内容
 		StringBuffer buffer = new StringBuffer();
-		//1������ƴ���ļ�ͷ������
+		//1：先来拼接文件头的内容
 		buffer.append("<?xml version='1.0' encoding='gb2312'?>\n");
 		buffer.append("<Report>\n");
 		buffer.append("  <Header>\n");
 		buffer.append("    <DepId>"+ehm.getDepId()+"</DepId>\n");
 		buffer.append("    <ExportDate>"+ehm.getExportDate()+"</ExportDate>\n");
 		buffer.append("  </Header>\n");
-		//2��������ƴ���ļ��������
+		//2：接着来拼接文件体的内容
 		buffer.append("  <Body>\n");
 		for(String tblName : mapData.keySet()){
-			//��ƴ�ӱ�����
+			//先拼接表名称
 			buffer.append("    <Datas TableName=\""+tblName+"\">\n");
-			//Ȼ��ѭ��ƴ�Ӿ�������
+			//然后循环拼接具体数据
 			for(ExportDataModel edm : mapData.get(tblName)){
 				buffer.append("      <Data>\n");
 				buffer.append("        <ProductId>"+edm.getProductId()+"</ProductId>\n");
@@ -38,14 +38,14 @@ public class ExportToXml {
 			buffer.append("    </Datas>\n");
 		}
 		buffer.append("  </Body>\n");
-		//3��������ƴ���ļ�β������
+		//3：接着来拼接文件尾的内容
 		buffer.append("  <Footer>\n");
 		buffer.append("    <ExportUser>"+efm.getExportUser()+"</ExportUser>\n");
 		buffer.append("  </Footer>\n");
 		buffer.append("</Report>\n");
 		
-		//Ϊ����ʾ����ԣ�����Ͳ�ȥд����ļ��Ĵ�����
-		//��Ҫ������������������̨����
-		System.out.println("�����XML�ļ������ݣ�\n"+buffer);
+		//为了演示简洁性，这里就不去写输出文件的代码了
+		//把要输出的内容输出到控制台看看
+		System.out.println("输出到XML文件的内容：\n"+buffer);
 	}
 }

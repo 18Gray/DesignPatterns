@@ -1,18 +1,18 @@
 package com.eighteengray.designpatternslib.prototype.commonsolution;
 /**
- * ��ҵ��������
+ * 企业订单对象
  */
 public class EnterpriseOrder implements OrderApi{
 	/**
-	 * ��ҵ����
+	 * 企业名称
 	 */
 	private String enterpriseName;
 	/**
-	 * ��Ʒ���
+	 * 产品编号
 	 */
 	private String productId;	
 	/**
-	 * ������Ʒ����
+	 * 订单产品数量
 	 */
 	private int orderProductNum = 0;
 	public int getOrderProductNum() {
@@ -34,6 +34,6 @@ public class EnterpriseOrder implements OrderApi{
 		this.productId = productId;
 	}
 	public String toString(){
-		return "����ҵ�����Ķ�����ҵ��="+this.enterpriseName+"��������Ʒ��="+this.productId+"����������Ϊ="+this.orderProductNum;
+		return "本企业订单的订购企业是="+this.enterpriseName+"，订购产品是="+this.productId+"，订购数量为="+this.orderProductNum;
 	}
 }

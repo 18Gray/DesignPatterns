@@ -1,11 +1,11 @@
 package com.eighteengray.designpatternslib.prototype.patternsolution_common;
 /**
- * ����һ����¡����Ľӿ�
+ * 声明一个克隆自身的接口
  */
 public interface Prototype {
 	/**
-	 * ��¡����ķ���
-	 * @return һ���������¡�����Ķ���
+	 * 克隆自身的方法
+	 * @return 一个从自身克隆出来的对象
 	 */
 	public Prototype clone();
 }

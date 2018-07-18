@@ -1,16 +1,16 @@
 package com.eighteengray.designpatternslib.abstractfactory.commonsolution;
 /**
- * ��������ļ򵥹���
+ * 创建主板的简单工厂
  */
 public class MainboardFactory {
 	/**
-	 * ��������ӿڶ���ķ���
-	 * @param type ѡ���������͵Ĳ���
-	 * @return ����ӿڶ���ķ���
+	 * 创建主板接口对象的方法
+	 * @param type 选择主板类型的参数
+	 * @return 主板接口对象的方法
 	 */
 	public static MainboardApi createMainboardApi(int type){
 		MainboardApi mainboard = null;
-		//���ݲ�����ѡ�񲢴�����Ӧ���������
+		//根据参数来选择并创建相应的主板对象
 		if(type==1){
 			mainboard = new GAMainboard(1156);
 		}else if(type==2){

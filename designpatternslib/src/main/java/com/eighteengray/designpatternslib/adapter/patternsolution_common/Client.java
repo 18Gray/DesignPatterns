@@ -1,17 +1,14 @@
 package com.eighteengray.designpatternslib.adapter.patternsolution_common;
-
 /**
- * ʹ���������Ŀͻ���
+ * 使用适配器的客户端
  */
-public class Client
-{
-	public static void main(String[] args)
-	{
-		// �����豻����Ķ���
+public class Client {	
+	public static void main(String[] args) {
+		//创建需被适配的对象
 		Adaptee adaptee = new Adaptee();
-		// �����ͻ�����Ҫ���õĽӿڶ���
+		//创建客户端需要调用的接口对象
 		Target target = new Adapter(adaptee);
-		// ������
+		//请求处理
 		target.request();
 	}
 }

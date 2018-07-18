@@ -1,21 +1,21 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution_simplefactory;
 /**
- * ��չExportOperate���󣬼�����Ե���XML�ļ�
+ * 扩展ExportOperate对象，加入可以导出XML文件
  */
 public class ExportOperate2 extends ExportOperate{
 	/**
-	 * ���Ǹ���Ĺ��������������������ļ�����Ľӿڶ���
-	 * @param type �û�ѡ��ĵ�������
-	 * @return �������ļ�����Ľӿڶ���
+	 * 覆盖父类的工厂方法，创建导出的文件对象的接口对象
+	 * @param type 用户选择的导出类型
+	 * @return 导出的文件对象的接口对象
 	 */
 //	protected ExportFileApi factoryMethod(int type){
 //		ExportFileApi api = null;
-//		//����ȫ�����ǣ�Ҳ����ѡ���Լ�����Ȥ�ĸ��ǣ�
-//		//����ֻ������Լ��µ�ʵ�֣������Ĳ���
+//		//可以全部覆盖，也可以选择自己感兴趣的覆盖，
+//		//这里只想添加自己新的实现，其他的不管
 //		if(type==3){
 //			api = new ExportXml();
 //		}else{
-//			//�����Ļ����ø�����ʵ��
+//			//其他的还是让父类来实现
 //			api = super.factoryMethod(type); 
 //		}
 //		return api; 

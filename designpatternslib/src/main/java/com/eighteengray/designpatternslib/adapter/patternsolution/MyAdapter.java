@@ -4,14 +4,14 @@ import java.util.List;
 
 public class MyAdapter extends DefaultAdapter{
 	/**
-	 * ������Ҫ������Ľӿڶ���
+	 * 持有需要被适配的接口对象
 	 */
 	private LogFileOperateApi adaptee;
 	
 	private TimeUtil adaptee2 = null;
 	/**
-	 * ���췽����������Ҫ������Ķ���
-	 * @param adaptee ��Ҫ������Ķ���
+	 * 构造方法，传入需要被适配的对象
+	 * @param adaptee 需要被适配的对象
 	 */
 	public MyAdapter(LogFileOperateApi adaptee,TimeUtil times) {
 		this.adaptee = adaptee;
@@ -25,11 +25,11 @@ public class MyAdapter extends DefaultAdapter{
 	}
 
 	public void removeLog(LogModel lm) {
-		//1���ȶ�ȡ�ļ�������
+		//1：先读取文件的内容
 		List<LogModel> list = adaptee.readLogFile();
-		//2��ɾ����Ӧ����־����
+		//2：删除相应的日志对象
 		list.remove(lm);
-		//3������д���ļ�
+		//3：重新写入文件
 		adaptee.writeLogFile(list);
 	}
 

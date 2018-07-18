@@ -1,16 +1,16 @@
 package com.eighteengray.designpatternslib.abstractfactory.commonsolution;
 /**
- * ����CPU�ļ򵥹���
+ * 创建CPU的简单工厂
  */
 public class CPUFactory {
 	/**
-	 * ����CPU�ӿڶ���ķ���
-	 * @param type ѡ��CPU���͵Ĳ���
-	 * @return CPU�ӿڶ���ķ���
+	 * 创建CPU接口对象的方法
+	 * @param type 选择CPU类型的参数
+	 * @return CPU接口对象的方法
 	 */
 	public static CPUApi createCPUApi(int type){
 		CPUApi cpu = null;
-		//���ݲ�����ѡ�񲢴�����Ӧ��CPU����
+		//根据参数来选择并创建相应的CPU对象
 		if(type==1){
 			cpu = new IntelCPU(1156);
 		}else if(type==2){

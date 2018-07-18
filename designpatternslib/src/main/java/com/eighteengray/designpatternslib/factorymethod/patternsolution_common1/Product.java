@@ -1,8 +1,8 @@
 package com.eighteengray.designpatternslib.factorymethod.patternsolution_common1;
 /**
- * ���������������Ķ���Ľӿ�
+ * 工厂方法所创建的对象的接口
  */
 public interface Product {
-	//���Զ���Product�ķ���
+	//可以定义Product的方法
 }
 

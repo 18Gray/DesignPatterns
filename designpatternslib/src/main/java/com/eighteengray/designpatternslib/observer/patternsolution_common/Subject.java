@@ -1,30 +1,32 @@
 package com.eighteengray.designpatternslib.observer.patternsolution_common;
 
 import java.util.*;
+import java.util.Observer;
+
 /**
- * Ŀ�������֪���۲����Ĺ۲��ߣ����ṩע���ɾ���۲��ߵĽӿ�
+ * 目标对象，它知道观察它的观察者，并提供注册和删除观察者的接口
  */
 public class Subject {
 	/**
-	 * ��������ע��Ĺ۲��߶���
+	 * 用来保存注册的观察者对象
 	 */
-	private List<Observer> observers = new ArrayList<Observer>();
+	private List<java.util.Observer> observers = new ArrayList<java.util.Observer>();
 	/**
-	 * ע��۲��߶���
-	 * @param observer �۲��߶���
+	 * 注册观察者对象
+	 * @param observer 观察者对象
 	 */
-	public void attach(Observer observer) {
+	public void attach(java.util.Observer observer) {
 		observers.add(observer);
 	}
 	/**
-	 * ɾ���۲��߶���
-	 * @param observer �۲��߶���
+	 * 删除观察者对象
+	 * @param observer 观察者对象
 	 */
-	public void detach(Observer observer) {
+	public void detach(java.util.Observer observer) {
 		observers.remove(observer);
 	}
 	/**
-	 * ֪ͨ����ע��Ĺ۲��߶���
+	 * 通知所有注册的观察者对象
 	 */
 	protected void notifyObservers() {
 		for(Observer observer : observers){

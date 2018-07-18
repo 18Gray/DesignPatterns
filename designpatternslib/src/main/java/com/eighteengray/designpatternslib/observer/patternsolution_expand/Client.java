@@ -2,26 +2,26 @@ package com.eighteengray.designpatternslib.observer.patternsolution_expand;
 
 public class Client {
 	public static void main(String[] args) {
-		//����һ����ֽ����Ϊ���۲���
+		//创建一个报纸，作为被观察者
 		NewsPaper subject = new NewsPaper();
 		
-		//�����Ķ��ߣ�Ҳ���ǹ۲���
+		//创建阅读者，也就是观察者
 		Reader reader1 = new Reader();
-		reader1.setName("����");
+		reader1.setName("张三");
 		
 		Reader reader2 = new Reader();
-		reader2.setName("����");
+		reader2.setName("李四");
 		
 		Reader reader3 = new Reader();
-		reader3.setName("����");
+		reader3.setName("王五");
 		
-		//ע���Ķ���
+		//注册阅读者
 		subject.addObserver(reader1);
 		subject.addObserver(reader2);
 		subject.addObserver(reader3);
 		
-		//Ҫ����ֽ��
-		subject.setContent("���������ǹ۲���ģʽ");
+		//要出报纸啦
+		subject.setContent("本期内容是观察者模式");
 		System.out.println("----------->");
 	}
 }

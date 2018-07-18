@@ -4,82 +4,63 @@ import java.io.*;
 import java.util.*;
 
 /**
- * ʵ�ֶ���־�ļ��Ĳ���
+ * 实现对日志文件的操作
  */
-public class LogFileOperate implements LogFileOperateApi
-{
+public class LogFileOperate implements LogFileOperateApi{
 	/**
-	 * ��־�ļ���·�����ļ����ƣ�Ĭ���ǵ�ǰclasspath�µ�AdapterLog.log
+	 * 日志文件的路径和文件名称，默认是当前classpath下的AdapterLog.log
 	 */
-	private String logFilePathName = "AdapterLog.log";
-
+	private String logFilePathName = "AdapterLog.log";	
 	/**
-	 * ���췽���������ļ���·��������
-	 * 
-	 * @param logFilePathName
-	 *            �ļ���·��������
+	 * 构造方法，传入文件的路径和名称
+	 * @param logFilePathName 文件的路径和名称
 	 */
-	public LogFileOperate(String logFilePathName)
-	{
-		// ���ж��Ƿ������ļ���·�������ƣ�����ǣ�
-		// ���������ò�������־�ļ���·��������
-		if (logFilePathName != null && logFilePathName.trim().length() > 0)
-		{
+	public LogFileOperate(String logFilePathName) {
+		//先判断是否传入了文件的路径和名称，如果是，
+		//就重新设置操作的日志文件的路径和名称
+		if(logFilePathName!=null && logFilePathName.trim().length()>0){
 			this.logFilePathName = logFilePathName;
 		}
 	}
-
-	public List<LogModel> readLogFile()
-	{
+	public  List<LogModel> readLogFile() {
 		List<LogModel> list = null;
 		ObjectInputStream oin = null;
-		try
-		{
+		try {
 			File f = new File(logFilePathName);
-			if (f.exists())
-			{
-				oin = new ObjectInputStream(new BufferedInputStream(
-						new FileInputStream(f)));
-				list = (List<LogModel>) oin.readObject();
+			if(f.exists()){
+				oin = new ObjectInputStream(
+						new BufferedInputStream(new FileInputStream(f))
+				);
+				list = (List<LogModel>)oin.readObject();
 			}
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		} finally
-		{
-			try
-			{
-				if (oin != null)
-				{
+		}finally{
+			try {
+				if(oin!=null){
 					oin.close();
 				}
-			} catch (IOException e)
-			{
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		return list;
 	}
 
-	public void writeLogFile(List<LogModel> list)
-	{
+	public void writeLogFile(List<LogModel> list){
 		File f = new File(logFilePathName);
 		ObjectOutputStream oout = null;
-		try
-		{
-			oout = new ObjectOutputStream(new BufferedOutputStream(
-					new FileOutputStream(f)));
-			oout.writeObject(list);
-		} catch (IOException e)
-		{
+		try {
+			oout = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream(f))
+			);
+			oout.writeObject(list);			
+		} catch (IOException e) {
 			e.printStackTrace();
-		} finally
-		{
-			try
-			{
+		}finally{
+			try {
 				oout.close();
-			} catch (IOException e)
-			{
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

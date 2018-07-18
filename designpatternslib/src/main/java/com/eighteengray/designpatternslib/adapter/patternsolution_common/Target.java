@@ -1,12 +1,11 @@
 package com.eighteengray.designpatternslib.adapter.patternsolution_common;
-
 /**
- * ����ͻ���ʹ�õĽӿڣ����ض��������
+ * 定义客户端使用的接口，与特定领域相关
  */
-public interface Target
-{
+public interface Target {
 	/**
-	 * ʾ�ⷽ�����ͻ���������ķ���
+	 * 示意方法，客户端请求处理的方法
 	 */
 	public void request();
 }
+

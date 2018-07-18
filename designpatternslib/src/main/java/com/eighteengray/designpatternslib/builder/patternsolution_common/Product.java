@@ -1,7 +1,7 @@
 package com.eighteengray.designpatternslib.builder.patternsolution_common;
 /**
- * �������Ĳ�Ʒ����Ľӿ�
+ * 被构建的产品对象的接口
  */
 public interface Product {
-	//�����Ʒ�Ĳ���
+	//定义产品的操作
 }

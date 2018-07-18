@@ -1,12 +1,12 @@
 package com.eighteengray.designpatternslib.observer.patternsolution_common;
 
 /**
- * �����Ŀ����󣬸�����й�״̬���뵽��Ӧ�Ĺ۲��߶���
- * �����Լ�״̬�����ı�ʱ��֪ͨ�����۲���
+ * 具体的目标对象，负责把有关状态存入到相应的观察者对象，
+ * 并在自己状态发生改变时，通知各个观察者
  */
 public class ConcreteSubject extends Subject {
 	/**
-	 * ʾ�⣬Ŀ������״̬
+	 * 示意，目标对象的状态
 	 */
 	private String subjectState;
 	public String getSubjectState() {
@@ -14,7 +14,7 @@ public class ConcreteSubject extends Subject {
 	}
 	public void setSubjectState(String subjectState) {
 		this.subjectState = subjectState;
-		//״̬�����˸ı䣬֪ͨ�����۲���
+		//状态发生了改变，通知各个观察者
 		this.notifyObservers();
 	}
 }

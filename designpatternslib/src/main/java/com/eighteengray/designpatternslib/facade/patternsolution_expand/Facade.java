@@ -1,10 +1,10 @@
 package com.eighteengray.designpatternslib.facade.patternsolution_expand;
 /**
- * ����������ϵͳ����۶���
+ * 代码生成子系统的外观对象
  */
 public class Facade implements FacadeApi{
 	/**
-	 * �ͻ�����Ҫ�ģ�һ���򵥵ĵ��ô������ɵĹ���
+	 * 客户端需要的，一个简单的调用代码生成的功能
 	 */
 	public  void generate(){
 		new Presentation().generate();

@@ -1,10 +1,10 @@
 package com.eighteengray.designpatternslib.abstractfactory.patternsolution_dao;
 /**
- * ��������¼��Ӧ��DAO�����ӿ�
+ * 订单主记录对应的DAO操作接口
  */
 public interface OrderMainDAO {
 	/**
-	 * ʾ�ⷽ�������涩������¼
+	 * 示意方法，保存订单主记录
 	 */
 	public void saveOrderMain();
 }

@@ -1,16 +1,16 @@
 package com.eighteengray.designpatternslib.mediator.patternsolution_common;
 /**
- * �����ͬ����B
+ * 具体的同事类B
  */
 public class ConcreteColleagueB extends Colleague {
 	public ConcreteColleagueB(Mediator mediator) {
 		super(mediator);
 	}
 	/**
-	 * ʾ�ⷽ����ִ��ĳЩҵ����
+	 * 示意方法，执行某些业务功能
 	 */
 	public void someOperation() {
-		//����Ҫ������ͬ��ͨ�ŵ�ʱ��֪ͨ�н��߶���
+		//在需要跟其他同事通信的时候，通知中介者对象
 		getMediator().changed(this);
 	}
 }

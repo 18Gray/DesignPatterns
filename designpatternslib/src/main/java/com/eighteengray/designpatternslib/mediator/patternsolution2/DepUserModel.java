@@ -1,18 +1,18 @@
 package com.eighteengray.designpatternslib.mediator.patternsolution2;
 /**
- *	�������ź���Ա��ϵ����
+ *	描述部门和人员关系的类
  */
 public class DepUserModel {
 	/**
-	 * ���ڲ��ź���Ա��ϵ�ı�ţ���������
+	 * 用于部门和人员关系的编号，用做主键
 	 */
 	private String depUserId;
 	/**
-	 * ���ŵı��
+	 * 部门的编号
 	 */
 	private String depId;
 	/**
-	 * ��Ա�ı��
+	 * 人员的编号
 	 */
 	private String userId;
 	public String getDepUserId() {

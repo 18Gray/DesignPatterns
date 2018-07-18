@@ -1,11 +1,11 @@
 package com.eighteengray.designpatternslib.prototype.patternsolution_common;
 
 /**
- * ��¡�ľ���ʵ�ֶ���
+ * 克隆的具体实现对象
  */
 public class ConcretePrototype2 implements Prototype {
 	public Prototype clone() {
-		//��򵥵Ŀ�¡���½�һ�������������û�����ԣ��Ͳ�ȥ����ֵ��
+		//最简单的克隆，新建一个自身对象，由于没有属性，就不去复制值了
 		Prototype prototype = new ConcretePrototype2();
 		return prototype;
 	}

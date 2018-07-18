@@ -3,20 +3,20 @@ package com.eighteengray.designpatternslib.adapter.patternsolution;
 import java.util.List;
 
 /**
- * ���������󣬰Ѽ�¼��־���ļ��Ĺ�������ɵڶ�����Ҫ����ɾ�Ĳ�Ĺ���
+ * 适配器对象，把记录日志到文件的功能适配成第二版需要的增删改查的功能
  */
 public class Adapter  implements LogDbOperateApi{
-	//����ʹ�ö�����ϣ�������ʹ�ö���̳�
+	//优先使用对象组合，而不是使用对象继承
 	
 	/**
-	 * ������Ҫ������Ľӿڶ���
+	 * 持有需要被适配的接口对象
 	 */
 	private LogFileOperateApi adaptee;
 	
 	private TimeUtil adaptee2 = null;
 	/**
-	 * ���췽����������Ҫ������Ķ���
-	 * @param adaptee ��Ҫ������Ķ���
+	 * 构造方法，传入需要被适配的对象
+	 * @param adaptee 需要被适配的对象
 	 */
 	public Adapter(LogFileOperateApi adaptee,TimeUtil times) {
 		this.adaptee = adaptee;
@@ -25,11 +25,11 @@ public class Adapter  implements LogDbOperateApi{
 	
 	public void createLog(LogModel lm) {
 		this.adaptee2.begin();
-		//1���ȶ�ȡ�ļ�������
+		//1：先读取文件的内容
 		List<LogModel> list = adaptee.readLogFile();
-		//2�������µ���־����
+		//2：加入新的日志对象
 		list.add(lm);
-		//3������д���ļ�
+		//3：重新写入文件
 		adaptee.writeLogFile(list);
 		this.adaptee2.end();
 		this.adaptee2.show();
@@ -40,25 +40,25 @@ public class Adapter  implements LogDbOperateApi{
 	}
 
 	public void removeLog(LogModel lm) {
-		//1���ȶ�ȡ�ļ�������
+		//1：先读取文件的内容
 		List<LogModel> list = adaptee.readLogFile();
-		//2��ɾ����Ӧ����־����
+		//2：删除相应的日志对象
 		list.remove(lm);
-		//3������д���ļ�
+		//3：重新写入文件
 		adaptee.writeLogFile(list);
 	}
 
 	public void updateLog(LogModel lm) {
-		//1���ȶ�ȡ�ļ�������
+		//1：先读取文件的内容
 		List<LogModel> list = adaptee.readLogFile();
-		//2���޸���Ӧ����־����
+		//2：修改相应的日志对象
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getLogId().equals(lm.getLogId())){
 				list.set(i, lm);
 				break;
 			}
 		}
-		//3������д���ļ�
+		//3：重新写入文件
 		adaptee.writeLogFile(list);
 	}
 }

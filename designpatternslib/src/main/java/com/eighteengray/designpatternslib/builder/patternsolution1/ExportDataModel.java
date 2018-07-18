@@ -1,18 +1,18 @@
 package com.eighteengray.designpatternslib.builder.patternsolution1;
 /**
- * ����������ݵĶ���
+ * 描述输出数据的对象
  */
 public class ExportDataModel {
 	/**
-	 * ��Ʒ���
+	 * 产品编号
 	 */
 	private String productId;
 	/**
-	 * ���ۼ۸�
+	 * 销售价格
 	 */
 	private double price;
 	/**
-	 * ��������
+	 * 销售数量
 	 */
 	private double amount;
 	
